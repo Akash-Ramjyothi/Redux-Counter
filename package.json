@@ -1,31 +1,63 @@
 {
   "name": "redux-basics",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "description": "A scalable React application using Redux Toolkit",
+  "author": "Your Name",
+  "license": "MIT",
+
   "dependencies": {
     "@reduxjs/toolkit": "^2.12.0",
-    "@testing-library/jest-dom": "^5.11.9",
-    "@testing-library/react": "^11.2.5",
-    "@testing-library/user-event": "^12.6.3",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
+    "axios": "^1.11.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-redux": "^9.3.0",
-    "react-scripts": "^5.0.1",
+    "react-router-dom": "^7.8.2",
     "redux": "^5.0.1",
     "web-vitals": "^1.1.0"
   },
+
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.8.0",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.15.0",
+    "@types/react": "^18.3.23",
+    "@types/react-dom": "^18.3.7",
+
+    "eslint": "^8.57.1",
+    "eslint-config-react-app": "^7.0.1",
+
+    "prettier": "^3.6.2",
+
+    "typescript": "^5.9.2",
+
+    "react-scripts": "^5.0.1"
+  },
+
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:coverage": "react-scripts test --coverage",
+    "test:watch": "react-scripts test --watchAll",
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,md}\"",
+    "format:check": "prettier --check \"src/**/*.{js,jsx,ts,tsx,json,css,md}\"",
+    "type-check": "tsc --noEmit",
     "eject": "react-scripts eject"
   },
+
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
     ]
   },
+
   "browserslist": {
     "production": [
       ">0.2%",
@@ -37,5 +69,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+
+  "engines": {
+    "node": ">=18.18.0",
+    "npm": ">=9.0.0"
   }
 }
