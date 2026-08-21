@@ -1,26 +1,110 @@
-* {
+/* Global box sizing */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+}
+
+/* Document defaults */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  font-family: sans-serif;
+  min-width: 320px;
+  min-height: 100vh;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  line-height: 1.5;
   color: #252525;
   background-color: #252525;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-button {
+/* Consistent form element typography */
+button,
+input,
+textarea,
+select {
   font: inherit;
-  cursor: pointer;
+}
+
+/* Interactive buttons */
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.5rem 1.5rem;
+
+  color: #fff;
   background-color: #3c0080;
   border: 1px solid #3c0080;
-  color: white;
-  padding: 0.5rem 1.5rem;
   border-radius: 6px;
+
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.1s ease,
+    box-shadow 0.2s ease;
 }
 
-button:hover,
-button:active {
+button:hover {
   background-color: #5b14ac;
   border-color: #5b14ac;
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+button:focus-visible {
+  outline: 3px solid rgba(91, 20, 172, 0.35);
+  outline-offset: 2px;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus-visible {
+  outline: 3px solid rgba(91, 20, 172, 0.35);
+  outline-offset: 2px;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }
