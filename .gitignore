@@ -9,11 +9,6 @@ node_modules/
 .yarn/unplugged/
 .yarn/install-state.gz
 
-
-# =========================================================
-# Production / Build Output
-# =========================================================
-
 build/
 dist/
 out/
